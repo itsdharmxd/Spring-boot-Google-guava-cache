@@ -11,6 +11,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
     private static HashMap<Integer,Employee> employeeData = new HashMap<>();
 
+    /**
+     * Helps to initialize the map emplyeeData
+     * this method, gets called after the constructor call
+     */
     @PostConstruct
     private void fillUsers() {
         employeeData.put(1, new Employee(1,"Ram","Manager"));
@@ -23,8 +27,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public Employee getEmployeeDetails(int EmployeeId) {
-       return employeeData.get(EmployeeId);
+    public Employee getEmployeeDetails(int employeeId) {
+
+        return employeeData.get(employeeId);
     }
 
     @Override
