@@ -1,4 +1,4 @@
-package com.upgrad.EmployeeService;
+package com.vishwa.employeeapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,13 +1,13 @@
-package com.upgrad.EmployeeService.repository;
+package com.vishwa.employeeapp.daos;
 
-import com.upgrad.EmployeeService.entities.Product;
+import com.vishwa.employeeapp.entities.Product;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import java.util.*;
 
 @Repository
-public class ProductRepositoryImpl implements ProductRepository {
+public class ProductDaoImpl implements ProductDao {
 
     private static HashMap<Integer, Product> productData = new HashMap<>();
 

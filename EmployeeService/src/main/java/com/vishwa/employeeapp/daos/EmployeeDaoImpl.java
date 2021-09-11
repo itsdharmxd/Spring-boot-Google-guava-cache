@@ -1,13 +1,13 @@
-package com.upgrad.EmployeeService.repository;
+package com.vishwa.employeeapp.daos;
 
-import com.upgrad.EmployeeService.entities.Employee;
+import com.vishwa.employeeapp.entities.Employee;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import java.util.*;
 
 @Repository
-public class EmployeeRepositoryImpl implements EmployeeRepository {
+public class EmployeeDaoImpl implements EmployeeDao {
 
     private static HashMap<Integer,Employee> employeeData = new HashMap<>();
 

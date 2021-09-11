@@ -1,7 +1,7 @@
-package com.upgrad.EmployeeService.services;
+package com.vishwa.employeeapp.services;
 
-import com.upgrad.EmployeeService.entities.Employee;
-import com.upgrad.EmployeeService.repository.EmployeeRepository;
+import com.vishwa.employeeapp.entities.Employee;
+import com.vishwa.employeeapp.daos.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,33 +11,33 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
-    EmployeeRepository employeeRepository;
+    EmployeeDao _employeeDao;
 
     @Override
     public Employee getEmployeeByID(int employeeId) {
         try {
             //Simulate backend service by forcing thread to sleep
-            Thread.sleep(1000*5);
+            Thread.sleep(1000*7);
         }catch (Exception e){
             e.printStackTrace();
         }
-        return employeeRepository.getEmployeeDetails(employeeId);
+        return _employeeDao.getEmployeeDetails(employeeId);
     }
 
     @Override
     public List<Employee> getAllEmployees() {
         try {
             //Simulate backend service by forcing thread to sleep
-            Thread.sleep(1000*5);
+            Thread.sleep(1000*7);
         }catch (Exception e){
             e.printStackTrace();
         }
-        return employeeRepository.getAllEmployee();
+        return _employeeDao.getAllEmployee();
     }
 
     @Override
     public Employee saveEmployeeDetails(Employee employee) {
-        employeeRepository.saveEmployeeDetails(employee);
+        _employeeDao.saveEmployeeDetails(employee);
         return employee;
     }
 }

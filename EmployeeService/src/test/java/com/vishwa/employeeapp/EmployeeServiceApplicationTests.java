@@ -1,4 +1,4 @@
-package com.upgrad.EmployeeService;
+package com.vishwa.employeeapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

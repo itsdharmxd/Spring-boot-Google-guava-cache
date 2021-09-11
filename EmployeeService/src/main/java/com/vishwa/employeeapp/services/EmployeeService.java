@@ -1,6 +1,6 @@
-package com.upgrad.EmployeeService.services;
+package com.vishwa.employeeapp.services;
 
-import com.upgrad.EmployeeService.entities.Employee;
+import com.vishwa.employeeapp.entities.Employee;
 
 import java.util.List;
 
