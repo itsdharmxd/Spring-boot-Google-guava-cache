@@ -1,5 +1,6 @@
 package com.vishwa.employeeapp.controllers;
 
+import com.vishwa.employeeapp.cachestore.CacheStore;
 import com.vishwa.employeeapp.entities.Employee;
 import com.vishwa.employeeapp.entities.Product;
 import com.vishwa.employeeapp.services.EmployeeService;
@@ -20,7 +21,8 @@ public class EmployeeController {
 
     @Autowired
     private ProductService productService;
-
+@Autowired
+    private CacheStore<Employee> cacheStore;
 
     @GetMapping("/employees/{id}")
     public ResponseEntity searchEmployeeByID(@PathVariable("id") int id) {
@@ -33,7 +35,17 @@ public class EmployeeController {
          *
          * next time returne the cached result for the same id
          */
-        Employee savedEmployee = employeeService.getEmployeeByID(id);
+
+        Employee savedEmployee =cacheStore.get(id);
+         if(savedEmployee!=null){
+
+         }else {
+          savedEmployee=    employeeService.getEmployeeByID(id);
+             cacheStore.add(id,savedEmployee);
+         }
+
+
+
         return new ResponseEntity(savedEmployee, HttpStatus.OK);
     }
 
